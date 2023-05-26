@@ -1,0 +1,12 @@
+  in main()
+  in intermediate()
+  in leaf()
+    global const string, addr: 0x55a8b693e078 (94183106011256)
+    stack-allocated (local) string, addr: 0x7ffd5c0f6f80 (140726147968896)
+    stack value in leaf() function, addr: 0x7ffd5c0f6f34 (140726147968820)
+    	stack grows: -76
+    dynamically (heap) allocated string, addr: 0x55a8b6b0b2b0 (94183107900080)
+    	next dynamically (heap) allocated, addr: 0x55a8b6b0b2f0 (94183107900144)
+    	malloc has grown heap in: 64 but 42 wasm requested
+    argv[0]: ./main, addr: 0x7ffd5c0f81c8 (140726147973576)
+
