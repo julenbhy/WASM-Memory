@@ -10,7 +10,7 @@ int fib(int n) {
 }
 
 int main() {
-    int n = 2010;
+    int n = 42;
     printf("fib(%d) = %d", n, fib(n));
     
     return 0;
