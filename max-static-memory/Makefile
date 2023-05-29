@@ -20,13 +20,13 @@ WASMTIME_FLAGS = # Add any additional wasmtime flags here
 
 all: $(TARGET) clang.wasm emcc.wasm
 
-$(TARGET): $(SOURCE)
+$(TARGET): $(TARGET).c
 	$(CC) $(CFLAGS) -o $@ $(TARGET).c -DMAX_SIZE=8388608			#default max = 8388608
 
-clang.wasm: $(SOURCE)
+clang.wasm: $(TARGET).c
 	$(CLANG_CC) $(CLANG_CFLAGS) -o $@ $(TARGET).c -DMAX_SIZE=65536		#default max = 65536
 	
-emcc.wasm: $(SOURCE)
+emcc.wasm: $(TARGET).c
 	$(EMCC_CC) $(EMCC_CFLAGS) -o $@ $(TARGET).c -DMAX_SIZE=5242880		#default max = 5242880
 
 

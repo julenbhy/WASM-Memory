@@ -1,12 +1,12 @@
-TARGET = dynamic
+TARGET = main
 
 # Compilation with gcc
 CC = gcc
-CFLAGS = -Wall -O3
+CFLAGS = -Wall
 
 # Compilation with wasi-sdk/clang
 CLANG_CC = /opt/wasi-sdk/bin/clang
-CLANG_CFLAGS =			# max heap modified by: -Wl,--max-memory=4294967296
+CLANG_CFLAGS =		# max heap modified by: -Wl,--max-memory=4294967296
 
 # Compilation with wasi-sdk/clang
 EMCC_CC = emcc
@@ -20,14 +20,14 @@ WASMTIME_FLAGS = # Add any additional wasmtime flags here
 
 all: $(TARGET) clang.wasm emcc.wasm
 
-$(TARGET): $(SOURCE)
-	$(CC) $(CFLAGS) -o $@ $(TARGET).c -DMAX_SIZE=8388608			#default max = 8388608
+$(TARGET): $(TARGET).c
+	$(CC) $(CFLAGS) -o $@ $(TARGET).c			#default max = 8388608
 
-clang.wasm: $(SOURCE)
-	$(CLANG_CC) $(CLANG_CFLAGS) -o $@ $(TARGET).c -DMAX_SIZE=65536		#default max = 65536
+clang.wasm: $(TARGET).c
+	$(CLANG_CC) $(CLANG_CFLAGS) -o $@ $(TARGET).c		#default max = 65536
 	
-emcc.wasm: $(SOURCE)
-	$(EMCC_CC) $(EMCC_CFLAGS) -o $@ $(TARGET).c -DMAX_SIZE=5242880		#default max = 5242880
+emcc.wasm: $(TARGET).c
+	$(EMCC_CC) $(EMCC_CFLAGS) -o $@ $(TARGET).c		#default max = 5242880
 
 
 # 4294967296 (4GB)

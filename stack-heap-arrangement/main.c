@@ -26,6 +26,7 @@ void leaf(char * arg_str, char * stack_str, char * heap_str, char * heap_str_end
 
 __attribute__((noinline))
 void intermediate(char * arg_str) {
+  printf("    \tstack at the beginning, addr :%p (%lu)\n", __builtin_frame_address(0), (uintptr_t) __builtin_frame_address(0));
   char stack_str[64];
   strcpy(stack_str, "stack-allocated (local) string");
   

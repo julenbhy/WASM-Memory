@@ -195,6 +195,9 @@ int run_memory_free_test()
 
 	printf("Freed %ld blocks in %.2f seconds. %.2f free/sec (%.2fM free/second).\n",
 			       counters->c, elapse_time, ((double)counters->c/elapse_time), ((double)counters->c/elapse_time)*1e-6);
+			      
+	printf("Freed(per_iter_work_count) %d blocks in %.2f seconds. %.2f free/sec (%.2fM free/second).\n",
+			       per_iter_work_count, elapse_time, ((double)per_iter_work_count/elapse_time), ((double)per_iter_work_count/elapse_time)*1e-6);
 
 	if (verbose_flag) printf("----------------------------------------------------------------\n");
 
@@ -250,4 +253,3 @@ int main(int argc, char **argv)
 	run_memory_free_test();
 	return 0;
 }
-

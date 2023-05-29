@@ -3,7 +3,10 @@
 #include <stdint.h>
 
 
-//MAX n when compiled with WASI-SDK/clang = 2048
+// Aprox max n;
+//	gcc:      174515
+//	wasi-sdk: 2012
+//	emcc:     8151
 
 int call = 0;
 

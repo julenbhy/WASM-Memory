@@ -1,0 +1,55 @@
+  in main()
+    	stack at the beginning, addr :0x7ffc7d4f7f00 (140722410848000)
+  in intermediate()
+  in leaf()
+    global const string, addr: 0x55bc725c9078 (94267860881528)
+    stack-allocated (local) string, addr: 0x7ffc7d4f7e90 (140722410847888)
+    stack value in leaf() function, addr: 0x7ffc7d4f7e44 (140722410847812)
+    	stack grows: -76
+    dynamically (heap) allocated string, addr: 0x55bc734af2b0 (94267876504240)
+    	next dynamically (heap) allocated, addr: 0x55bc734af2f0 (94267876504304)
+    	malloc has grown heap in: 64 but 42 wasm requested
+    argv[0]: ./main, addr: 0x7ffc7d4fa1c4 (140722410856900)
+
+clang-stack-first.wasm
+  in main()
+    	stack at the beginning, addr :0xffa0 (65440)
+  in intermediate()
+  in leaf()
+    global const string, addr: 0x10021 (65569)
+    stack-allocated (local) string, addr: 0xffb0 (65456)
+    stack value in leaf() function, addr: 0xff9c (65436)
+    	stack grows: -20
+    dynamically (heap) allocated string, addr: 0x11270 (70256)
+    	next dynamically (heap) allocated, addr: 0x112a0 (70304)
+    	malloc has grown heap in: 48 but 42 wasm requested
+    argv[0]: clang-stack-first.wasm, addr: 0x11240 (70208)
+
+clang.wasm
+  in main()
+    	stack at the beginning, addr :0x115d0 (71120)
+  in intermediate()
+  in leaf()
+    global const string, addr: 0x421 (1057)
+    stack-allocated (local) string, addr: 0x115e0 (71136)
+    stack value in leaf() function, addr: 0x115cc (71116)
+    	stack grows: -20
+    dynamically (heap) allocated string, addr: 0x11660 (71264)
+    	next dynamically (heap) allocated, addr: 0x11690 (71312)
+    	malloc has grown heap in: 48 but 42 wasm requested
+    argv[0]: clang.wasm, addr: 0x11640 (71232)
+
+emcc-upstream.wasm
+  in main()
+    	stack at the beginning, addr :0x500e60 (5246560)
+  in intermediate()
+  in leaf()
+    global const string, addr: 0x40a (1034)
+    stack-allocated (local) string, addr: 0x500e70 (5246576)
+    stack value in leaf() function, addr: 0x500e5c (5246556)
+    	stack grows: -20
+    dynamically (heap) allocated string, addr: 0x500ef8 (5246712)
+    	next dynamically (heap) allocated, addr: 0x500f28 (5246760)
+    	malloc has grown heap in: 48 but 42 wasm requested
+    argv[0]: emcc-upstream.wasm, addr: 0x500eb0 (5246640)
+

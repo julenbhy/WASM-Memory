@@ -16,10 +16,10 @@ WASMTIME_FLAGS =
 
 all: $(TARGET) $(TARGET).wasm
 
-$(TARGET): $(SOURCE)
+$(TARGET): $(TARGET).c
 	$(CC) $(CFLAGS) -o $@ $(TARGET).c
 
-$(TARGET).wasm: $(SOURCE)
+$(TARGET).wasm: $(TARGET).c
 	$(WASM_CC) $(WASM_CFLAGS) -o $@ $(TARGET).c
 
 
