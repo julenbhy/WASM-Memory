@@ -14,7 +14,13 @@ long long fibb(long long a, long long b, int n) {
 
 int main(int argc, char *argv[]) {
 
-   int n = atoi(argv[1]);	
+   int n = 2048;
+   
+   if (argc != 2) {
+       printf("Usage: %s <fibonacci position> (default 2048)\n", argv[0]);
+   }
+   else n = atoll(argv[1]);
+   
    printf("Fibbonacci of %d: %lld\n", n, fibb(0, 1, n));
 
 

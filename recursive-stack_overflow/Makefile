@@ -5,32 +5,41 @@ CC = gcc
 CFLAGS = -Wall
 
 # Compilation with wasi-sdk/clang
-WASM_CC = /opt/wasi-sdk/bin/clang
-WASM_CFLAGS = 
+CLANG_CC = /opt/wasi-sdk/bin/clang
+CLANG_CFLAGS =
 
-# Source file
-SOURCE = main.c
+# Compilation with EMCC
+EMCC_CC = emcc
+EMCC_CFLAGS =
+
 
 # Flags for wasmtime
-WASMTIME_FLAGS =  # Add any additional wasmtime flags here
+WASMTIME_FLAGS = --dir=.  # Add any additional wasmtime flags here
 
 .PHONY: all clean
 
-all: $(TARGET) $(TARGET).wasm
+all: $(TARGET) clang.wasm emcc.wasm
 
-$(TARGET): $(SOURCE)
+$(TARGET): $(TARGET).c
 	$(CC) $(CFLAGS) -o $@ $(TARGET).c
 
-$(TARGET).wasm: $(SOURCE)
-	$(WASM_CC) $(WASM_CFLAGS) -o $@ $(TARGET).c
-
-
-run: $(TARGET)
-	./$(TARGET) 174499 # With n=>174499 iterations makes Segmentation fault (core dumped) sometimes, the higher n, the commonly occurs
-
-runwasm: $(TARGET).wasm
-	wasmtime $(WASMTIME_FLAGS) $(TARGET).wasm 2049 # With n=>2049 iterations makes Segmentation fault (core dumped) always
+clang.wasm: $(TARGET).c
+	$(CLANG_CC) $(CLANG_CFLAGS) -o $@ $(TARGET).c
 	
+emcc.wasm: $(TARGET).c
+	$(EMCC_CC) $(EMCC_CFLAGS) -o $@ $(TARGET).c
 
+
+PARAMS ?=
+run: $(TARGET)
+	./$(TARGET) $(PARAMS)
+
+runclang: clang.wasm
+	wasmtime $(WASMTIME_FLAGS) clang.wasm $(PARAMS)
+	
+runemcc: emcc.wasm
+	wasmtime $(WASMTIME_FLAGS) emcc.wasm $(PARAMS)
+	
+	
 clean:
-	rm -f $(TARGET) $(TARGET).wasm
+	rm -f $(TARGET) *.wasm
