@@ -1,0 +1,94 @@
+wasmtime --wasm-features=threads --wasi-modules=experimental-wasi-threads clang.wasm 
+Usage: clang.wasm <memory_amount> (default = 10Bytes)
+Thread 1 Initializing 10 Bytes. 
+	Stack at: 0x316e4 (202468)
+Thread 0 Initializing 10 Bytes. 
+	Stack at: 0x21654 (136788)
+Thread 2 Initializing 10 Bytes. 
+	Stack at: 0x41774 (268148)
+Thread 3 Initializing 10 Bytes. 
+	Stack at: 0x51804 (333828)
+Tread 1 Allocated memory: 1 Bytes. 
+	Heap at 0x518b0 (334000)
+Tread 3 Allocated memory: 1 Bytes. 
+	Heap at 0x518c0 (334016)
+Tread 0 Allocated memory: 1 Bytes. 
+	Heap at 0x518d0 (334032)
+Tread 2 Allocated memory: 1 Bytes. 
+	Heap at 0x518e0 (334048)
+Tread 1 Allocated memory: 2 Bytes. 
+	Heap at 0x51900 (334080)
+Tread 3 Allocated memory: 2 Bytes. 
+	Heap at 0x518f0 (334064)
+Tread 0 Allocated memory: 2 Bytes. 
+	Heap at 0x51910 (334096)
+Tread 2 Allocated memory: 2 Bytes. 
+	Heap at 0x51920 (334112)
+Tread 3 Allocated memory: 3 Bytes. 
+	Heap at 0x51930 (334128)
+Tread 1 Allocated memory: 3 Bytes. 
+	Heap at 0x51940 (334144)
+Tread 0 Allocated memory: 3 Bytes. 
+	Heap at 0x51950 (334160)
+Tread 2 Allocated memory: 3 Bytes. 
+	Heap at 0x51960 (334176)
+Tread 3 Allocated memory: 4 Bytes. 
+	Heap at 0x51970 (334192)
+Tread 1 Allocated memory: 4 Bytes. 
+	Heap at 0x51990 (334224)
+Tread 2 Allocated memory: 4 Bytes. 
+	Heap at 0x51980 (334208)
+Tread 0 Allocated memory: 4 Bytes. 
+	Heap at 0x519a0 (334240)
+Tread 3 Allocated memory: 5 Bytes. 
+	Heap at 0x519b0 (334256)
+Tread 2 Allocated memory: 5 Bytes. 
+	Heap at 0x519c0 (334272)
+Tread 1 Allocated memory: 5 Bytes. 
+	Heap at 0x519d0 (334288)
+Tread 0 Allocated memory: 5 Bytes. 
+	Heap at 0x519e0 (334304)
+Tread 2 Allocated memory: 6 Bytes. 
+	Heap at 0x519f0 (334320)
+Tread 3 Allocated memory: 6 Bytes. 
+	Heap at 0x51a00 (334336)
+Tread 1 Allocated memory: 6 Bytes. 
+	Heap at 0x51a10 (334352)
+Tread 0 Allocated memory: 6 Bytes. 
+	Heap at 0x51a20 (334368)
+Tread 2 Allocated memory: 7 Bytes. 
+	Heap at 0x51a30 (334384)
+Tread 3 Allocated memory: 7 Bytes. 
+	Heap at 0x51a40 (334400)
+Tread 1 Allocated memory: 7 Bytes. 
+	Heap at 0x51a60 (334432)
+Tread 0 Allocated memory: 7 Bytes. 
+	Heap at 0x51a50 (334416)
+Tread 2 Allocated memory: 8 Bytes. 
+	Heap at 0x51a70 (334448)
+Tread 3 Allocated memory: 8 Bytes. 
+	Heap at 0x51a80 (334464)
+Tread 0 Allocated memory: 8 Bytes. 
+	Heap at 0x51a90 (334480)
+Tread 1 Allocated memory: 8 Bytes. 
+	Heap at 0x51aa0 (334496)
+Tread 2 Allocated memory: 9 Bytes. 
+	Heap at 0x51ab0 (334512)
+Tread 3 Allocated memory: 9 Bytes. 
+	Heap at 0x51ac0 (334528)
+Tread 0 Allocated memory: 9 Bytes. 
+	Heap at 0x51ad0 (334544)
+Tread 1 Allocated memory: 9 Bytes. 
+	Heap at 0x51ae0 (334560)
+Tread 3 Allocated memory: 10 Bytes. 
+	Heap at 0x51af0 (334576)
+Thread 3 finishing
+Tread 2 Allocated memory: 10 Bytes. 
+	Heap at 0x51b00 (334592)
+Thread 2 finishing
+Tread 0 Allocated memory: 10 Bytes. 
+	Heap at 0x51b10 (334608)
+Thread 0 finishing
+Tread 1 Allocated memory: 10 Bytes. 
+	Heap at 0x11670 (71280)
+Thread 1 finishing

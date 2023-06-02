@@ -11,7 +11,8 @@
 int call = 0;
 
 long long fibb(long long a, long long b, int n) {
-    printf("Call %d stack pointer at: %p\n", call++,  __builtin_frame_address(0));
+    printf("__builtin_frame_address at: %p (%lu)\n", __builtin_frame_address(0), (uintptr_t) __builtin_frame_address(0));
+    printf("%d stack pointer at: %p\n", call++,  &a);
     return (--n>0)?(fibb(b, a+b, n)):(a);
 }
 

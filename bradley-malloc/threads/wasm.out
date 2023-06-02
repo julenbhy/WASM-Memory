@@ -1,7 +1,3 @@
-wasmtime --wasm-features=threads --wasi-modules=experimental-wasi-threads breadley-malloc.wasm -- 
-Thread  0 frees 20971520 blocks in 162.23 seconds. 129272.30 free/sec (0.13M free/second).
-Thread  1 frees 20971520 blocks in 162.23 seconds. 129272.30 free/sec (0.13M free/second).
-Thread  2 frees 20971520 blocks in 162.23 seconds. 129272.30 free/sec (0.13M free/second).
-Thread  3 frees 20971520 blocks in 162.23 seconds. 129272.30 free/sec (0.13M free/second).
+Thread  0 frees 20971520 blocks in 6.50 seconds. 3226955.14 free/sec (3.23M free/second).
 ----------------------------------------------------------------
-Total 83886080 freed in 162.23 seconds. 0.52M free/second
+Total 20971520 freed in 6.50 seconds. 3.23M free/second

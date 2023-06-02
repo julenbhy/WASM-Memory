@@ -1,0 +1,285 @@
+gcc -Wall -o main main.c			#default max = 8388608
+./main 
+Usage: ./main <memory_amount> (default = 10Bytes)
+Thread 3 Initializing 10 Bytes. 
+	Stack at: 0x7f68fcbfbe28 (140088893750824)
+Thread 0 Initializing 10 Bytes. 
+	Stack at: 0x7f68fe3fee28 (140088918928936)
+Thread 1 Initializing 10 Bytes. 
+	Stack at: 0x7f68fdbfde28 (140088910536232)
+Thread 2 Initializing 10 Bytes. 
+	Stack at: 0x7f68fd3fce28 (140088902143528)
+Tread 2 Allocated memory: 1 Bytes. 
+	Heap at 0x7f68e0000b70 (140088411425648)
+Tread 0 Allocated memory: 1 Bytes. 
+	Heap at 0x7f68e8000b70 (140088545643376)
+Tread 1 Allocated memory: 1 Bytes. 
+	Heap at 0x7f68f0000b70 (140088679861104)
+Tread 3 Allocated memory: 1 Bytes. 
+	Heap at 0x7f68f8000b70 (140088814078832)
+Tread 1 Allocated memory: 2 Bytes. 
+	Heap at 0x7f68f0000b90 (140088679861136)
+Tread 3 Allocated memory: 2 Bytes. 
+	Heap at 0x7f68f8000b90 (140088814078864)
+Tread 0 Allocated memory: 2 Bytes. 
+	Heap at 0x7f68e8000b90 (140088545643408)
+Tread 2 Allocated memory: 2 Bytes. 
+	Heap at 0x7f68e0000b90 (140088411425680)
+Tread 3 Allocated memory: 3 Bytes. 
+	Heap at 0x7f68f8000bb0 (140088814078896)
+Tread 0 Allocated memory: 3 Bytes. 
+	Heap at 0x7f68e8000bb0 (140088545643440)
+Tread 1 Allocated memory: 3 Bytes. 
+	Heap at 0x7f68f0000bb0 (140088679861168)
+Tread 2 Allocated memory: 3 Bytes. 
+	Heap at 0x7f68e0000bb0 (140088411425712)
+Tread 0 Allocated memory: 4 Bytes. 
+	Heap at 0x7f68e8000bd0 (140088545643472)
+Tread 1 Allocated memory: 4 Bytes. 
+	Heap at 0x7f68f0000bd0 (140088679861200)
+Tread 2 Allocated memory: 4 Bytes. 
+	Heap at 0x7f68e0000bd0 (140088411425744)
+Tread 3 Allocated memory: 4 Bytes. 
+	Heap at 0x7f68f8000bd0 (140088814078928)
+Tread 0 Allocated memory: 5 Bytes. 
+	Heap at 0x7f68e8000bf0 (140088545643504)
+Tread 3 Allocated memory: 5 Bytes. 
+	Heap at 0x7f68f8000bf0 (140088814078960)
+Tread 1 Allocated memory: 5 Bytes. 
+	Heap at 0x7f68f0000bf0 (140088679861232)
+Tread 2 Allocated memory: 5 Bytes. 
+	Heap at 0x7f68e0000bf0 (140088411425776)
+Tread 3 Allocated memory: 6 Bytes. 
+	Heap at 0x7f68f8000c10 (140088814078992)
+Tread 1 Allocated memory: 6 Bytes. 
+	Heap at 0x7f68f0000c10 (140088679861264)
+Tread 0 Allocated memory: 6 Bytes. 
+	Heap at 0x7f68e8000c10 (140088545643536)
+Tread 2 Allocated memory: 6 Bytes. 
+	Heap at 0x7f68e0000c10 (140088411425808)
+Tread 3 Allocated memory: 7 Bytes. 
+	Heap at 0x7f68f8000c30 (140088814079024)
+Tread 1 Allocated memory: 7 Bytes. 
+	Heap at 0x7f68f0000c30 (140088679861296)
+Tread 0 Allocated memory: 7 Bytes. 
+	Heap at 0x7f68e8000c30 (140088545643568)
+Tread 2 Allocated memory: 7 Bytes. 
+	Heap at 0x7f68e0000c30 (140088411425840)
+Tread 3 Allocated memory: 8 Bytes. 
+	Heap at 0x7f68f8000c50 (140088814079056)
+Tread 1 Allocated memory: 8 Bytes. 
+	Heap at 0x7f68f0000c50 (140088679861328)
+Tread 2 Allocated memory: 8 Bytes. 
+	Heap at 0x7f68e0000c50 (140088411425872)
+Tread 0 Allocated memory: 8 Bytes. 
+	Heap at 0x7f68e8000c50 (140088545643600)
+Tread 3 Allocated memory: 9 Bytes. 
+	Heap at 0x7f68f8000c70 (140088814079088)
+Tread 1 Allocated memory: 9 Bytes. 
+	Heap at 0x7f68f0000c70 (140088679861360)
+Tread 0 Allocated memory: 9 Bytes. 
+	Heap at 0x7f68e8000c70 (140088545643632)
+Tread 2 Allocated memory: 9 Bytes. 
+	Heap at 0x7f68e0000c70 (140088411425904)
+Tread 2 Allocated memory: 10 Bytes. 
+	Heap at 0x7f68e0000c90 (140088411425936)
+Tread 1 Allocated memory: 10 Bytes. 
+	Heap at 0x7f68f0000c90 (140088679861392)
+Thread 1 finishing
+Thread 2 finishing
+Tread 3 Allocated memory: 10 Bytes. 
+	Heap at 0x7f68f8000c90 (140088814079120)
+Thread 3 finishing
+Tread 0 Allocated memory: 10 Bytes. 
+	Heap at 0x7f68e8000c90 (140088545643664)
+Thread 0 finishing
+/opt/wasi-sdk/bin/clang --target=wasm32-wasi-threads -pthread -Wl,--import-memory,--export-memory,--max-memory=4294967296		 -o clang.wasm main.c		#default max = 65536
+wasmtime --wasm-features=threads --wasi-modules=experimental-wasi-threads clang.wasm 
+Usage: clang.wasm <memory_amount> (default = 10Bytes)
+Thread 2 Initializing 10 Bytes. 
+	Stack at: 0x41774 (268148)
+Thread 1 Initializing 10 Bytes. 
+	Stack at: 0x316e4 (202468)
+Thread 3 Initializing 10 Bytes. 
+	Stack at: 0x51804 (333828)
+Thread 0 Initializing 10 Bytes. 
+	Stack at: 0x21654 (136788)
+Tread 1 Allocated memory: 1 Bytes. 
+	Heap at 0x518b0 (334000)
+Tread 3 Allocated memory: 1 Bytes. 
+	Heap at 0x518d0 (334032)
+Tread 2 Allocated memory: 1 Bytes. 
+	Heap at 0x518e0 (334048)
+Tread 0 Allocated memory: 1 Bytes. 
+	Heap at 0x518c0 (334016)
+Tread 2 Allocated memory: 2 Bytes. 
+	Heap at 0x518f0 (334064)
+Tread 0 Allocated memory: 2 Bytes. 
+	Heap at 0x51900 (334080)
+Tread 1 Allocated memory: 2 Bytes. 
+	Heap at 0x51910 (334096)
+Tread 3 Allocated memory: 2 Bytes. 
+	Heap at 0x51920 (334112)
+Tread 2 Allocated memory: 3 Bytes. 
+	Heap at 0x51930 (334128)
+Tread 3 Allocated memory: 3 Bytes. 
+	Heap at 0x51950 (334160)
+Tread 0 Allocated memory: 3 Bytes. 
+	Heap at 0x51940 (334144)
+Tread 1 Allocated memory: 3 Bytes. 
+	Heap at 0x51960 (334176)
+Tread 3 Allocated memory: 4 Bytes. 
+	Heap at 0x51970 (334192)
+Tread 0 Allocated memory: 4 Bytes. 
+	Heap at 0x51990 (334224)
+Tread 1 Allocated memory: 4 Bytes. 
+	Heap at 0x51980 (334208)
+Tread 2 Allocated memory: 4 Bytes. 
+	Heap at 0x519a0 (334240)
+Tread 3 Allocated memory: 5 Bytes. 
+	Heap at 0x519b0 (334256)
+Tread 0 Allocated memory: 5 Bytes. 
+	Heap at 0x519c0 (334272)
+Tread 1 Allocated memory: 5 Bytes. 
+	Heap at 0x519d0 (334288)
+Tread 2 Allocated memory: 5 Bytes. 
+	Heap at 0x519e0 (334304)
+Tread 0 Allocated memory: 6 Bytes. 
+	Heap at 0x519f0 (334320)
+Tread 2 Allocated memory: 6 Bytes. 
+	Heap at 0x51a10 (334352)
+Tread 3 Allocated memory: 6 Bytes. 
+	Heap at 0x51a00 (334336)
+Tread 1 Allocated memory: 6 Bytes. 
+	Heap at 0x51a20 (334368)
+Tread 1 Allocated memory: 7 Bytes. 
+	Heap at 0x51a30 (334384)
+Tread 3 Allocated memory: 7 Bytes. 
+	Heap at 0x51a40 (334400)
+Tread 0 Allocated memory: 7 Bytes. 
+	Heap at 0x51a50 (334416)
+Tread 2 Allocated memory: 7 Bytes. 
+	Heap at 0x51a60 (334432)
+Tread 0 Allocated memory: 8 Bytes. 
+	Heap at 0x51a70 (334448)
+Tread 1 Allocated memory: 8 Bytes. 
+	Heap at 0x51a80 (334464)
+Tread 3 Allocated memory: 8 Bytes. 
+	Heap at 0x51aa0 (334496)
+Tread 2 Allocated memory: 8 Bytes. 
+	Heap at 0x51a90 (334480)
+Tread 0 Allocated memory: 9 Bytes. 
+	Heap at 0x51ab0 (334512)
+Tread 1 Allocated memory: 9 Bytes. 
+	Heap at 0x51ac0 (334528)
+Tread 3 Allocated memory: 9 Bytes. 
+	Heap at 0x51ad0 (334544)
+Tread 2 Allocated memory: 9 Bytes. 
+	Heap at 0x51ae0 (334560)
+Tread 0 Allocated memory: 10 Bytes. 
+	Heap at 0x51af0 (334576)
+Tread 1 Allocated memory: 10 Bytes. 
+	Heap at 0x51b00 (334592)
+Thread 1 finishing
+Thread 0 finishing
+Tread 3 Allocated memory: 10 Bytes. 
+	Heap at 0x51b10 (334608)
+Tread 2 Allocated memory: 10 Bytes. 
+	Heap at 0x51b20 (334624)
+Thread 3 finishing
+Thread 2 finishing
+emcc  -o emcc.wasm main.c s		#default max = 5242880
+./main 
+Usage: ./main <memory_amount> (default = 10Bytes)
+Thread 3 Initializing 10 Bytes. 
+	Stack at: 0x7ff9db3fbe28 (140711101972008)
+Thread 0 Initializing 10 Bytes. 
+	Stack at: 0x7ff9dcbfee28 (140711127150120)
+Thread 1 Initializing 10 Bytes. 
+	Stack at: 0x7ff9dc3fde28 (140711118757416)
+Thread 2 Initializing 10 Bytes. 
+	Stack at: 0x7ff9dbbfce28 (140711110364712)
+Tread 2 Allocated memory: 1 Bytes. 
+	Heap at 0x7ff9bc000b70 (140710577703792)
+Tread 3 Allocated memory: 1 Bytes. 
+	Heap at 0x7ff9d4000b70 (140710980356976)
+Tread 0 Allocated memory: 1 Bytes. 
+	Heap at 0x7ff9cc000b70 (140710846139248)
+Tread 1 Allocated memory: 1 Bytes. 
+	Heap at 0x7ff9c4000b70 (140710711921520)
+Tread 3 Allocated memory: 2 Bytes. 
+	Heap at 0x7ff9d4000b90 (140710980357008)
+Tread 0 Allocated memory: 2 Bytes. 
+	Heap at 0x7ff9cc000b90 (140710846139280)
+Tread 2 Allocated memory: 2 Bytes. 
+	Heap at 0x7ff9bc000b90 (140710577703824)
+Tread 1 Allocated memory: 2 Bytes. 
+	Heap at 0x7ff9c4000b90 (140710711921552)
+Tread 3 Allocated memory: 3 Bytes. 
+	Heap at 0x7ff9d4000bb0 (140710980357040)
+Tread 1 Allocated memory: 3 Bytes. 
+	Heap at 0x7ff9c4000bb0 (140710711921584)
+Tread 2 Allocated memory: 3 Bytes. 
+	Heap at 0x7ff9bc000bb0 (140710577703856)
+Tread 0 Allocated memory: 3 Bytes. 
+	Heap at 0x7ff9cc000bb0 (140710846139312)
+Tread 3 Allocated memory: 4 Bytes. 
+	Heap at 0x7ff9d4000bd0 (140710980357072)
+Tread 1 Allocated memory: 4 Bytes. 
+	Heap at 0x7ff9c4000bd0 (140710711921616)
+Tread 0 Allocated memory: 4 Bytes. 
+	Heap at 0x7ff9cc000bd0 (140710846139344)
+Tread 2 Allocated memory: 4 Bytes. 
+	Heap at 0x7ff9bc000bd0 (140710577703888)
+Tread 3 Allocated memory: 5 Bytes. 
+	Heap at 0x7ff9d4000bf0 (140710980357104)
+Tread 2 Allocated memory: 5 Bytes. 
+	Heap at 0x7ff9bc000bf0 (140710577703920)
+Tread 1 Allocated memory: 5 Bytes. 
+	Heap at 0x7ff9c4000bf0 (140710711921648)
+Tread 0 Allocated memory: 5 Bytes. 
+	Heap at 0x7ff9cc000bf0 (140710846139376)
+Tread 3 Allocated memory: 6 Bytes. 
+	Heap at 0x7ff9d4000c10 (140710980357136)
+Tread 1 Allocated memory: 6 Bytes. 
+	Heap at 0x7ff9c4000c10 (140710711921680)
+Tread 0 Allocated memory: 6 Bytes. 
+	Heap at 0x7ff9cc000c10 (140710846139408)
+Tread 2 Allocated memory: 6 Bytes. 
+	Heap at 0x7ff9bc000c10 (140710577703952)
+Tread 3 Allocated memory: 7 Bytes. 
+	Heap at 0x7ff9d4000c30 (140710980357168)
+Tread 0 Allocated memory: 7 Bytes. 
+	Heap at 0x7ff9cc000c30 (140710846139440)
+Tread 2 Allocated memory: 7 Bytes. 
+	Heap at 0x7ff9bc000c30 (140710577703984)
+Tread 1 Allocated memory: 7 Bytes. 
+	Heap at 0x7ff9c4000c30 (140710711921712)
+Tread 1 Allocated memory: 8 Bytes. 
+	Heap at 0x7ff9c4000c50 (140710711921744)
+Tread 3 Allocated memory: 8 Bytes. 
+	Heap at 0x7ff9d4000c50 (140710980357200)
+Tread 2 Allocated memory: 8 Bytes. 
+	Heap at 0x7ff9bc000c50 (140710577704016)
+Tread 0 Allocated memory: 8 Bytes. 
+	Heap at 0x7ff9cc000c50 (140710846139472)
+Tread 0 Allocated memory: 9 Bytes. 
+	Heap at 0x7ff9cc000c70 (140710846139504)
+Tread 2 Allocated memory: 9 Bytes. 
+	Heap at 0x7ff9bc000c70 (140710577704048)
+Tread 1 Allocated memory: 9 Bytes. 
+	Heap at 0x7ff9c4000c70 (140710711921776)
+Tread 3 Allocated memory: 9 Bytes. 
+	Heap at 0x7ff9d4000c70 (140710980357232)
+Tread 0 Allocated memory: 10 Bytes. 
+	Heap at 0x7ff9cc000c90 (140710846139536)
+Tread 3 Allocated memory: 10 Bytes. 
+	Heap at 0x7ff9d4000c90 (140710980357264)
+Thread 0 finishing
+Thread 3 finishing
+Tread 1 Allocated memory: 10 Bytes. 
+	Heap at 0x7ff9c4000c90 (140710711921808)
+Tread 2 Allocated memory: 10 Bytes. 
+	Heap at 0x7ff9bc000c90 (140710577704080)
+Thread 2 finishing
+Thread 1 finishing

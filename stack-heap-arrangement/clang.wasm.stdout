@@ -1,0 +1,13 @@
+  in main()
+    	stack at the beginning, addr :0x115d0 (71120)
+  in intermediate()
+  in leaf()
+    global const string, addr: 0x421 (1057)
+    stack-allocated (local) string, addr: 0x115e0 (71136)
+    stack value in leaf() function, addr: 0x115cc (71116)
+    	stack grows: -20
+    dynamically (heap) allocated string, addr: 0x11660 (71264)
+    	next dynamically (heap) allocated, addr: 0x11690 (71312)
+    	malloc has grown heap in: 48 but 42 wasm requested
+    argv[0]: clang.wasm, addr: 0x11640 (71232)
+

@@ -31,7 +31,7 @@ emcc.wasm: $(TARGET).c
 
 
 # 4294967296 (4GB)
-PARAMS ?= 4294967296
+PARAMS ?= 
 run: $(TARGET)
 	./$(TARGET) $(PARAMS)
 
