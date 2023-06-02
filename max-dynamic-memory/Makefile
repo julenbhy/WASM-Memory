@@ -6,11 +6,11 @@ CFLAGS = -Wall
 
 # Compilation with wasi-sdk/clang
 CLANG_CC = /opt/wasi-sdk/bin/clang
-CLANG_CFLAGS =		# max heap modified by: -Wl,--max-memory=4294967296
+CLANG_CFLAGS =	# max heap modified by: -Wl,--max-memory=4294967296    max stack: -z stack-size=65536
 
 # Compilation with wasi-sdk/clang
 EMCC_CC = emcc
-EMCC_CFLAGS =			# max heap modified by: -s ALLOW_MEMORY_GROWTH=1 -s MAXIMUM_MEMORY=4294967296
+EMCC_CFLAGS = -s TOTAL_MEMORY=4095MB	# max total mem modified by: -s TOTAL_MEMORY=4095MB    max stack: -s TOTAL_STACK=5MB
 
 
 # Flags for wasmtime
