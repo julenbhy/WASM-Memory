@@ -3,7 +3,7 @@ Usage: clang.wasm <memory_amount> (default = 10Bytes)
 Thread 1 Initializing 10 Bytes. 
 	Stack at: 0x316e4 (202468)
 Thread 0 Initializing 10 Bytes. 
-	Stack at: 0x21654 (136788)
+	Stack at: 0x21654 (136788)  (Thread 1 stack pointer - Thread 0 stack pointer = 65680) (matches the default stack size=65536)
 Thread 2 Initializing 10 Bytes. 
 	Stack at: 0x41774 (268148)
 Thread 3 Initializing 10 Bytes. 
