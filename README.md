@@ -5,7 +5,7 @@ The WebAssembly-Memory Repository is a dedicated resource designed to facilitate
 Please note that Emscripten does not currently support threads, while the wasi-sdk-20 clang compiler does provide thread support. Therefore, experiments involving threads will only be executed using wasi-sdk/clang compiler.
 
 
-## WASM-Memory
+## no-threads
 
 #### malloc_sizes: 
 This C program serves as a memory benchmarking tool, measuring the time taken to allocate a specified amount of memory in chunks of a given size. It provides detailed statistics on the total allocated memory, the number of allocated chunks, and the average chunk allocation time. This tool is valuable for evaluating memory performance and efficiency in WebAssembly applications.
@@ -21,3 +21,22 @@ This C program explores stack overflow behavior by recursively calling a functio
 
 #### stack-heap-arrangement:
 This C program explores the memory layout and addresses of various variables in different memory regions, such as the stack, heap, and global constant area. It relies on the use of __builtin_frame_address to retrieve the frame pointer address.
+
+## threads
+#### breadley-malloc:
+
+#### max-dynamic-memory:
+This program serves as a tool to observe the behavior of memory allocation in a multi-threaded environment. It helps evaluate how memory allocation is managed and synchronized among different threads, providing insights into the efficiency and performance of concurrent memory operations.
+
+When native c the heap is divided into thread arenas. However, when compiling to wasm, the threads compete to write in the same heap space. The 4Gb of heap are dividing along the threads
+
+#### max-static-memory:
+This C program aims to determine the maximum size of the stack and observe the behavior when it 
+is exceeded if using threads. It takes a command-line argument specifying the desired size of the array. The program 
+then creates an array of the specified size on the stack. By running this program with different sizes, 
+one can explore the limitations and behavior of the stack in WebAssembly applications when exceeding its maximum size.
+
+
+Unlike the heap, in both, native c and wasm, each thread does have its own full-sized stack without 
+dividing the stack size among threads.
+The thread stacks are arranged in ascending order and at a distance of 65680b between stack pointers.
