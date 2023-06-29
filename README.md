@@ -40,3 +40,4 @@ one can explore the limitations and behavior of the stack in WebAssembly applica
 Unlike the heap, in both, native c and wasm, each thread does have its own full-sized stack without 
 dividing the stack size among threads.
 The thread stacks are arranged in ascending order and at a distance of 65680b between stack pointers.
+A thread can access and modify positions in the stack of another thread.
