@@ -1,19 +1,6 @@
 # WASM-Memory
 
-Some tests to evaluate memory behavior in webassembly
+The WebAssembly-Memory Repository is a dedicated resource designed to facilitate in-depth exploration and evaluation of memory management within WebAssembly (Wasm) applications. This repository provides a diverse collection of C programs for researchers and developers seeking to understand and analyze the intricate workings of memory in both single-threaded and multi-threaded scenarios. All programs within this repository are developed and tested using the WebAssembly System Interface (WASI) version 20, ensuring compatibility and relevance within the evolving WebAssembly ecosystem.
 
 
-## [bradley-malloc:](https://github.com/julenbhy/WASM-Memory/tree/main/bradley-malloc)
-Based on: https://github.com/kuszmaul/SuperMalloc/blob/master/tests/bradley-malloc-test.c
-
-The code has been adapted to have a non-pthreaded version to compare the performance between the two cases.
-
-## [max-static-memory:](https://github.com/julenbhy/WASM-Memory/tree/main/max-static-memory)
-This benchmark is intended to evaluate the maximum amount of static memory that a program can allocate. 
-- gcc max mem: < 8MB (default stack size on linux 8MB).
-- wasi-sdk/clang: 64KB (default stack size 64KB, same as wasm page size, can be modified using -z stack-size=n).
-- emcc: 5MB (default stack size 5MB, can be modified using -s TOTAL_STACK=10MB)
-
-## [max-dynamic-memory:](https://github.com/julenbhy/WASM-Memory/tree/main/max-dynamic-memory)
-- wasm max heap size: 4GB.
 
