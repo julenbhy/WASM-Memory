@@ -41,3 +41,10 @@ Unlike the heap, in both, native c and wasm, each thread does have its own full-
 dividing the stack size among threads.
 The thread stacks are arranged in ascending order and at a distance of 65680b between stack pointers.
 A thread can access and modify positions in the stack of another thread.
+
+#### stack-overflow:
+This C program aims to investigate the consequences of stack overflow caused by recursive calls in a multi-threaded environment. By creating multiple threads and performing recursive function calls, it explores the limitations of stack memory and observes the behavior when those limits are exceeded. The program helps in understanding the impact of stack overflow on program execution, such as crashes or unexpected behavior, and provides insights into stack management in multi-threaded applications.
+
+
+## Bench-malloc
+[bench-malloc-simple](https://github.com/daanx/mimalloc-bench/blob/master/bench/glibc-bench/bench-malloc-simple.c) and bench-malloc-simple adapted to multithreading in order to evaluate malloc performance for different malloc sizes.
