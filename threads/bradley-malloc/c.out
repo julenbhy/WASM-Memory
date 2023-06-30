@@ -1,0 +1,6 @@
+Thread  0 frees 20971520 blocks in 16.21 seconds. 1293593.63 free/sec (1.29M free/second).
+Thread  1 frees 20971520 blocks in 16.21 seconds. 1293593.63 free/sec (1.29M free/second).
+Thread  2 frees 20971520 blocks in 16.21 seconds. 1293593.63 free/sec (1.29M free/second).
+Thread  3 frees 20971520 blocks in 16.21 seconds. 1293593.63 free/sec (1.29M free/second).
+----------------------------------------------------------------
+Total 83886080 freed in 16.21 seconds. 5.17M free/second

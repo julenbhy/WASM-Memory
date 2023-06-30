@@ -6,7 +6,8 @@ CFLAGS = -Wall
 
 # Compilation with wasi-sdk/clang
 CLANG_CC = /opt/wasi-sdk/bin/clang
-CLANG_CFLAGS =	--target=wasm32-wasi-threads -pthread -Wl,--import-memory,--export-memory,--max-memory=4294967296		# max heap modified by: -Wl,--max-memory=4294967296
+CLANG_CFLAGS = --target=wasm32-wasi-threads -pthread -Wl,--import-memory,--export-memory,--max-memory=4294967296	
+CLANG_CFLAGS += -D_WASI_EMULATED_PROCESS_CLOCKS -lwasi-emulated-process-clocks # To enable getrusage 
 
 
 # Flags for wasmtime
@@ -14,7 +15,7 @@ WASMTIME_FLAGS = --wasm-features=threads --wasi-modules=experimental-wasi-thread
 
 .PHONY: all clean
 
-all: $(TARGET) $(TARGET)32 clang.wasm
+all: $(TARGET) clang.wasm
 
 $(TARGET): $(TARGET).c
 	$(CC) $(CFLAGS) -o $@ $(TARGET).c
@@ -24,7 +25,7 @@ $(TARGET)32: $(TARGET).c
 
 clang.wasm: $(TARGET).c
 	$(CLANG_CC) $(CLANG_CFLAGS) -o $@ $(TARGET).c
-
+	
 
 
 PARAMS ?= 
