@@ -4,7 +4,7 @@ The WebAssembly-Memory Repository is a dedicated resource designed to facilitate
 
 Please note that Emscripten does not currently support threads, while the wasi-sdk-20 clang compiler does provide thread support. Therefore, experiments involving threads will only be executed using wasi-sdk/clang compiler.
 
-## Bench-malloc
+## bench-malloc
 [bench-malloc-simple](https://github.com/daanx/mimalloc-bench/blob/master/bench/glibc-bench/bench-malloc-simple.c) and bench-malloc-simple adapted to multithreading in order to evaluate malloc performance for different malloc sizes.
 
 ## no-threads
